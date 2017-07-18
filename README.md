@@ -105,11 +105,14 @@ customArrowIcon: PropTypes.node,
 customCloseIcon: PropTypes.node,
 
 // calendar presentation and interaction related props
+renderMonth: PropTypes.func,
 orientation: OrientationShape,
 anchorDirection: anchorDirectionShape,
 horizontalMargin: PropTypes.number,
 withPortal: PropTypes.bool,
 withFullScreenPortal: PropTypes.bool,
+daySize: nonNegativeInteger,
+isRTL: PropTypes.bool,
 initialVisibleMonth: PropTypes.func,
 numberOfMonths: PropTypes.number,
 keepOpenOnDateSelect: PropTypes.bool,
@@ -117,7 +120,6 @@ reopenPickerOnClearDates: PropTypes.bool,
 renderCalendarInfo: PropTypes.func,
 enableDropdowns: PropTypes.bool,
 hideKeyboardShortcutsPanel: PropTypes.bool,
-isRTL: PropTypes.bool,
 
 // navigation related props
 navPrev: PropTypes.node,
@@ -172,6 +174,7 @@ showDefaultInputIcon: PropTypes.bool,
 customInputIcon: PropTypes.node,
 
 // calendar presentation and interaction related props
+renderMonth: PropTypes.func,
 orientation: OrientationShape,
 anchorDirection: anchorDirectionShape,
 horizontalMargin: PropTypes.number,
@@ -184,6 +187,7 @@ reopenPickerOnClearDate: PropTypes.bool,
 renderCalendarInfo: PropTypes.func,
 enableDropdowns: PropTypes.bool,
 hideKeyboardShortcutsPanel: PropTypes.bool,
+daySize: nonNegativeInteger,
 isRTL: PropTypes.bool,
 
 // navigation related props
