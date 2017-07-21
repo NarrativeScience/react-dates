@@ -56,25 +56,41 @@ describe('MonthSelector', () => {
         expect(wrapper.find('.MonthSelector__year_select')).to.have.lengthOf(1);
       });
 
-      it('has options for 56 years', () => {
+      it('has options for 31 years', () => {
         const wrapper = shallow(<MonthSelector />);
-        expect(wrapper.find('.MonthSelector__year_select option')).to.have.lengthOf(56);
+        expect(wrapper.find('.MonthSelector__year_select option')).to.have.lengthOf(31);
       });
 
       it('has the proper year first', () => {
         const date = moment('2016-02-20');
         const wrapper = shallow(<MonthSelector month={date} />);
         const option = wrapper.find('.MonthSelector__year_select option').first();
-        expect(option.prop('value')).to.equal(1966);
-        expect(option.text()).to.equal('1966');
+        expect(option.prop('value')).to.equal(2001);
+        expect(option.text()).to.equal('2001');
       });
 
       it('has the proper year last', () => {
         const date = moment('2016-02-20');
         const wrapper = shallow(<MonthSelector month={date} />);
         const option = wrapper.find('.MonthSelector__year_select option').last();
-        expect(option.prop('value')).to.equal(2021);
-        expect(option.text()).to.equal('2021');
+        expect(option.prop('value')).to.equal(2031);
+        expect(option.text()).to.equal('2031');
+      });
+
+      it('should not allow years pre-1900', () => {
+        const date = moment('1901-02-20');
+        const wrapper = shallow(<MonthSelector month={date} />);
+        const option = wrapper.find('.MonthSelector__year_select option').first();
+        expect(option.prop('value')).to.equal(1900);
+        expect(option.text()).to.equal('1900');
+      });
+
+      it('should not allow years post-2100', () => {
+        const date = moment('2096-02-20');
+        const wrapper = shallow(<MonthSelector month={date} />);
+        const option = wrapper.find('.MonthSelector__year_select option').last();
+        expect(option.prop('value')).to.equal(2100);
+        expect(option.text()).to.equal('2100');
       });
     });
   });
