@@ -1,5 +1,8 @@
 # Change Log
 
+## 12.2.5-0
+- [fix] Change options available in date selection dropdowns([#7](https://github.com/NarrativeScience/react-dates/pull/7))
+
 ## 12.2.4
 - [fix] Fix `initialVisibleMonth` error in the `DayPickerRangeController` component ([#617](https://github.com/airbnb/react-dates/pull/617))
 - [fix] Pass through missing `keepOpenOnDateSelect` prop to the `DayPickerSingleDateController` component ([#620](https://github.com/airbnb/react-dates/pull/620))
